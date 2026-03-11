@@ -129,6 +129,54 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .modal-tag{background:var(--accent);color:#fff;padding:4px 10px;border-radius:999px;font-size:.78rem;font-weight:600}
 .modal-date{color:var(--text-light);font-size:.85rem;margin-top:12px}
 
+/* Admin Panel */
+.admin-fab{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:1.6rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.3);z-index:1500;display:none;align-items:center;justify-content:center;transition:var(--transition)}
+.admin-fab:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.4)}
+.admin-fab.visible{display:flex}
+.admin-panel{position:fixed;top:0;right:-480px;width:460px;max-width:100vw;height:100vh;background:var(--white);z-index:2500;box-shadow:-4px 0 30px rgba(0,0,0,.3);transition:right .3s ease;display:flex;flex-direction:column;overflow:hidden}
+.admin-panel.open{right:0}
+.admin-header{padding:20px 24px;background:var(--dark);color:var(--white);display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+.admin-header h3{font-family:'Playfair Display',serif;font-size:1.3rem}
+.admin-close{background:none;border:none;color:var(--white);font-size:1.4rem;cursor:pointer;padding:4px 8px}
+.admin-body{padding:24px;overflow-y:auto;flex:1}
+.admin-section{margin-bottom:20px}
+.admin-section h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--dark);margin-bottom:8px}
+.admin-row{display:flex;gap:10px;margin-bottom:10px}
+.admin-input{width:100%;padding:10px 14px;border:2px solid var(--light);border-radius:var(--radius);font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:var(--transition);background:var(--white);color:var(--text)}
+.admin-input:focus{border-color:var(--accent)}
+.admin-input::placeholder{color:var(--text-light)}
+textarea.admin-input{min-height:80px;resize:vertical}
+.admin-btn{padding:10px 18px;border-radius:999px;border:none;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:var(--transition);white-space:nowrap}
+.admin-btn-primary{background:var(--accent);color:#fff}
+.admin-btn-primary:hover{background:#8a5e3a}
+.admin-btn-secondary{background:var(--dark);color:#fff}
+.admin-btn-secondary:hover{background:#1a3526}
+.admin-btn:disabled{opacity:.5;cursor:not-allowed}
+.tmdb-results{max-height:260px;overflow-y:auto;border:2px solid var(--light);border-radius:var(--radius);margin-top:8px}
+.tmdb-result{display:flex;gap:12px;padding:10px;cursor:pointer;transition:background .2s;border-bottom:1px solid rgba(0,0,0,.06);align-items:center}
+.tmdb-result:hover{background:rgba(164,113,73,.08)}
+.tmdb-result.selected{background:rgba(164,113,73,.15);border-left:4px solid var(--accent)}
+.tmdb-result img{width:45px;height:68px;object-fit:cover;border-radius:4px;flex-shrink:0}
+.tmdb-result-info{flex:1;min-width:0}
+.tmdb-result-title{font-weight:700;font-size:.9rem;color:var(--dark)}
+.tmdb-result-meta{font-size:.78rem;color:var(--text-light);margin-top:2px}
+.tmdb-no-poster{width:45px;height:68px;background:var(--light);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--text-light);text-align:center;flex-shrink:0}
+.selected-movie-preview{background:rgba(38,71,51,.05);border-radius:var(--radius);padding:14px;display:flex;gap:14px;margin-bottom:16px}
+.selected-movie-preview img{width:60px;height:90px;object-fit:cover;border-radius:6px}
+.selected-movie-preview .preview-info{flex:1}
+.selected-movie-preview .preview-title{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--dark)}
+.selected-movie-preview .preview-meta{font-size:.82rem;color:var(--text-light);margin-top:2px}
+.selected-movie-preview .preview-genres{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px}
+.json-output{background:#1e1e1e;color:#d4d4d4;padding:16px;border-radius:var(--radius);font-family:'Courier New',monospace;font-size:.78rem;line-height:1.5;max-height:300px;overflow:auto;white-space:pre;margin-top:10px;position:relative}
+.copy-toast{position:fixed;bottom:90px;right:24px;background:var(--dark);color:#fff;padding:10px 20px;border-radius:999px;font-size:.88rem;font-weight:600;z-index:3000;opacity:0;transition:opacity .3s;pointer-events:none}
+.copy-toast.show{opacity:1}
+.admin-key-hint{font-size:.78rem;color:var(--text-light);margin-top:6px}
+.admin-tag-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.admin-tag-chip{padding:5px 12px;border:2px solid var(--accent);border-radius:999px;font-size:.8rem;font-weight:600;cursor:pointer;transition:var(--transition);background:var(--white);color:var(--text)}
+.admin-tag-chip.active{background:var(--accent);color:#fff}
+.admin-spinner{display:inline-block;width:16px;height:16px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-right:6px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+
 /* Footer */
 footer{padding:28px 0;color:var(--light);text-align:center;background:rgba(0,0,0,.2)}
 footer a{color:var(--accent);text-decoration:none}
@@ -167,6 +215,9 @@ footer a:hover{text-decoration:underline}
   .modal-details h2{font-size:1.4rem}
   .controls-section{padding:20px 0}
   .filter-btn{padding:6px 12px;font-size:.8rem}
+  .admin-panel{width:100vw}
+  .admin-body{padding:16px}
+  .admin-fab{bottom:16px;right:16px;width:48px;height:48px;font-size:1.3rem}
 }
 html{scroll-behavior:smooth}
 </style>
@@ -237,6 +288,74 @@ html{scroll-behavior:smooth}
     </div>
   </div>
 </div>
+
+<!-- Admin FAB -->
+<button class="admin-fab" id="admin-fab" title="Add Movie (Ctrl+Shift+A)">+</button>
+
+<!-- Admin Panel -->
+<div class="admin-panel" id="admin-panel">
+  <div class="admin-header">
+    <h3>Add Movie</h3>
+    <button class="admin-close" id="admin-close">&times;</button>
+  </div>
+  <div class="admin-body">
+    <!-- Step 1: API Key -->
+    <div class="admin-section" id="api-key-section">
+      <h4>TMDB API Key</h4>
+      <div class="admin-row">
+        <input type="password" class="admin-input" id="api-key-input" placeholder="Paste your TMDB v3 API key..." />
+        <button class="admin-btn admin-btn-primary" id="save-key-btn">Save</button>
+      </div>
+      <p class="admin-key-hint">Free key from <a href="https://www.themoviedb.org/settings/api" target="_blank" rel="noopener" style="color:var(--accent)">themoviedb.org/settings/api</a>. Stored in your browser only.</p>
+    </div>
+
+    <!-- Step 2: Search -->
+    <div class="admin-section" id="search-section" style="display:none">
+      <h4>Search TMDB</h4>
+      <div class="admin-row">
+        <input type="text" class="admin-input" id="tmdb-search-input" placeholder="Type a movie title..." />
+        <button class="admin-btn admin-btn-primary" id="tmdb-search-btn">Search</button>
+      </div>
+      <div id="tmdb-results"></div>
+    </div>
+
+    <!-- Step 3: Details form (after selection) -->
+    <div class="admin-section" id="details-section" style="display:none">
+      <div id="selected-preview"></div>
+      <h4>Your Rating (out of 10)</h4>
+      <input type="number" class="admin-input" id="rating-input" min="0" max="10" step="0.5" placeholder="e.g. 8.5" style="margin-bottom:12px" />
+      <h4>Date Watched</h4>
+      <input type="date" class="admin-input" id="date-input" style="margin-bottom:12px" />
+      <h4>Review (optional)</h4>
+      <textarea class="admin-input" id="review-input" placeholder="Write your take..."></textarea>
+      <h4 style="margin-top:12px">Tags</h4>
+      <div class="admin-tag-chips" id="tag-chips">
+        <span class="admin-tag-chip" data-tag="all-time-favorite">all-time-favorite</span>
+        <span class="admin-tag-chip" data-tag="rewatched">rewatched</span>
+        <span class="admin-tag-chip" data-tag="guilty-pleasure">guilty-pleasure</span>
+        <span class="admin-tag-chip" data-tag="underrated">underrated</span>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:10px">
+        <button class="admin-btn admin-btn-primary" id="generate-btn">Generate JSON</button>
+        <button class="admin-btn admin-btn-secondary" id="back-btn">Back to Search</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Output -->
+    <div class="admin-section" id="output-section" style="display:none">
+      <h4>Copy this into movies.json</h4>
+      <p style="font-size:.82rem;color:var(--text-light);margin-bottom:8px">Add a comma after the previous entry, then paste this before the closing <code>]</code></p>
+      <div class="json-output" id="json-output"></div>
+      <div style="margin-top:12px;display:flex;gap:10px">
+        <button class="admin-btn admin-btn-primary" id="copy-btn">Copy to Clipboard</button>
+        <button class="admin-btn admin-btn-secondary" id="add-another-btn">Add Another</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copy toast -->
+<div class="copy-toast" id="copy-toast">Copied to clipboard!</div>
 
 <footer>
   <div class="container">&copy; <span id="yr"></span> Onkar Randad &bull; <a href="index.html">Back to Portfolio</a></div>
@@ -463,6 +582,241 @@ html{scroll-behavior:smooth}
 
   // Year
   document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // ——— Admin Panel ———
+  const isAdmin = new URLSearchParams(window.location.search).has('admin');
+  const fab = document.getElementById('admin-fab');
+  const panel = document.getElementById('admin-panel');
+  const adminClose = document.getElementById('admin-close');
+  const apiKeySection = document.getElementById('api-key-section');
+  const apiKeyInput = document.getElementById('api-key-input');
+  const saveKeyBtn = document.getElementById('save-key-btn');
+  const searchSection = document.getElementById('search-section');
+  const tmdbSearchInput = document.getElementById('tmdb-search-input');
+  const tmdbSearchBtn = document.getElementById('tmdb-search-btn');
+  const tmdbResults = document.getElementById('tmdb-results');
+  const detailsSection = document.getElementById('details-section');
+  const selectedPreview = document.getElementById('selected-preview');
+  const ratingInput = document.getElementById('rating-input');
+  const dateInput = document.getElementById('date-input');
+  const reviewInput = document.getElementById('review-input');
+  const tagChips = document.getElementById('tag-chips');
+  const generateBtn = document.getElementById('generate-btn');
+  const backBtn = document.getElementById('back-btn');
+  const outputSection = document.getElementById('output-section');
+  const jsonOutput = document.getElementById('json-output');
+  const copyBtn = document.getElementById('copy-btn');
+  const addAnotherBtn = document.getElementById('add-another-btn');
+  const copyToast = document.getElementById('copy-toast');
+
+  let selectedMovie = null;
+  let tmdbApiKey = localStorage.getItem('tmdb_api_key') || '';
+
+  // Show admin mode
+  function enableAdmin() {
+    fab.classList.add('visible');
+  }
+
+  if (isAdmin) enableAdmin();
+  document.addEventListener('keydown', e => {
+    if (e.ctrlKey && e.shiftKey && e.key === 'A') { e.preventDefault(); enableAdmin(); }
+  });
+
+  function openAdmin() {
+    panel.classList.add('open');
+    if (tmdbApiKey) {
+      apiKeyInput.value = tmdbApiKey;
+      showSearchStep();
+    } else {
+      showKeyStep();
+    }
+  }
+  function closeAdmin() { panel.classList.remove('open'); }
+
+  fab.addEventListener('click', openAdmin);
+  adminClose.addEventListener('click', closeAdmin);
+
+  function showKeyStep() {
+    apiKeySection.style.display = '';
+    searchSection.style.display = 'none';
+    detailsSection.style.display = 'none';
+    outputSection.style.display = 'none';
+  }
+  function showSearchStep() {
+    apiKeySection.style.display = 'none';
+    searchSection.style.display = '';
+    detailsSection.style.display = 'none';
+    outputSection.style.display = 'none';
+    tmdbResults.innerHTML = '';
+    tmdbSearchInput.value = '';
+    tmdbSearchInput.focus();
+  }
+  function showDetailsStep() {
+    apiKeySection.style.display = 'none';
+    searchSection.style.display = 'none';
+    detailsSection.style.display = '';
+    outputSection.style.display = 'none';
+  }
+  function showOutputStep() {
+    apiKeySection.style.display = 'none';
+    searchSection.style.display = 'none';
+    detailsSection.style.display = 'none';
+    outputSection.style.display = '';
+  }
+
+  // Save API key
+  saveKeyBtn.addEventListener('click', () => {
+    const key = apiKeyInput.value.trim();
+    if (!key) return;
+    tmdbApiKey = key;
+    localStorage.setItem('tmdb_api_key', key);
+    showSearchStep();
+  });
+  apiKeyInput.addEventListener('keydown', e => { if (e.key === 'Enter') saveKeyBtn.click(); });
+
+  // Search TMDB
+  async function searchTMDB(query) {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${encodeURIComponent(tmdbApiKey)}&query=${encodeURIComponent(query)}&include_adult=false`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      if (res.status === 401) { tmdbResults.innerHTML = '<div style="padding:12px;color:red;font-size:.85rem">Invalid API key. Check your key and try again.</div>'; return; }
+      throw new Error('TMDB request failed');
+    }
+    const data = await res.json();
+    return data.results || [];
+  }
+
+  async function getMovieDetails(id) {
+    const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${encodeURIComponent(tmdbApiKey)}&append_to_response=credits`;
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch movie details');
+    return res.json();
+  }
+
+  tmdbSearchBtn.addEventListener('click', async () => {
+    const query = tmdbSearchInput.value.trim();
+    if (!query) return;
+    tmdbSearchBtn.disabled = true;
+    tmdbSearchBtn.innerHTML = '<span class="admin-spinner"></span>Searching';
+    try {
+      const results = await searchTMDB(query);
+      if (results.length === 0) {
+        tmdbResults.innerHTML = '<div style="padding:12px;color:var(--text-light);font-size:.85rem">No results found. Try a different title.</div>';
+        return;
+      }
+      tmdbResults.innerHTML = results.slice(0, 10).map((r, i) => `
+        <div class="tmdb-result" data-idx="${i}">
+          ${r.poster_path
+            ? `<img src="https://image.tmdb.org/t/p/w92${r.poster_path}" alt="${r.title}" />`
+            : `<div class="tmdb-no-poster">No poster</div>`}
+          <div class="tmdb-result-info">
+            <div class="tmdb-result-title">${r.title}</div>
+            <div class="tmdb-result-meta">${r.release_date ? r.release_date.slice(0, 4) : 'Unknown year'}${r.overview ? ' — ' + r.overview.slice(0, 80) + '...' : ''}</div>
+          </div>
+        </div>
+      `).join('');
+
+      // Bind selection
+      tmdbResults.querySelectorAll('.tmdb-result').forEach(el => {
+        el.addEventListener('click', async () => {
+          const idx = parseInt(el.dataset.idx);
+          const r = results[idx];
+          el.classList.add('selected');
+          try {
+            const details = await getMovieDetails(r.id);
+            const director = (details.credits?.crew || []).find(c => c.job === 'Director');
+            selectedMovie = {
+              tmdb_id: details.id,
+              title: details.title,
+              year: details.release_date ? parseInt(details.release_date.slice(0, 4)) : null,
+              director: director ? director.name : '',
+              poster_url: details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : '',
+              genres: (details.genres || []).map(g => g.name),
+              runtime_minutes: details.runtime || null
+            };
+            // Show preview
+            selectedPreview.innerHTML = `
+              <div class="selected-movie-preview">
+                ${selectedMovie.poster_url ? `<img src="https://image.tmdb.org/t/p/w92${details.poster_path}" alt="${selectedMovie.title}" />` : ''}
+                <div class="preview-info">
+                  <div class="preview-title">${selectedMovie.title} (${selectedMovie.year || '?'})</div>
+                  <div class="preview-meta">${selectedMovie.director} &bull; ${selectedMovie.runtime_minutes ? selectedMovie.runtime_minutes + ' min' : ''}</div>
+                  <div class="preview-genres">${selectedMovie.genres.map(g => `<span class="genre-tag">${g}</span>`).join('')}</div>
+                </div>
+              </div>
+            `;
+            // Pre-fill date to today
+            dateInput.value = new Date().toISOString().slice(0, 10);
+            ratingInput.value = '';
+            reviewInput.value = '';
+            tagChips.querySelectorAll('.admin-tag-chip').forEach(c => c.classList.remove('active'));
+            showDetailsStep();
+          } catch (err) {
+            alert('Failed to load movie details: ' + err.message);
+          }
+        });
+      });
+    } catch (err) {
+      tmdbResults.innerHTML = `<div style="padding:12px;color:red;font-size:.85rem">Error: ${err.message}</div>`;
+    } finally {
+      tmdbSearchBtn.disabled = false;
+      tmdbSearchBtn.textContent = 'Search';
+    }
+  });
+  tmdbSearchInput.addEventListener('keydown', e => { if (e.key === 'Enter') tmdbSearchBtn.click(); });
+
+  // Tag chips toggle
+  tagChips.addEventListener('click', e => {
+    const chip = e.target.closest('.admin-tag-chip');
+    if (chip) chip.classList.toggle('active');
+  });
+
+  // Back to search
+  backBtn.addEventListener('click', () => { selectedMovie = null; showSearchStep(); });
+
+  // Generate JSON
+  generateBtn.addEventListener('click', () => {
+    if (!selectedMovie) return;
+    const activeTags = [...tagChips.querySelectorAll('.admin-tag-chip.active')].map(c => c.dataset.tag);
+    const entry = {
+      tmdb_id: selectedMovie.tmdb_id,
+      title: selectedMovie.title,
+      year: selectedMovie.year,
+      director: selectedMovie.director,
+      poster_url: selectedMovie.poster_url,
+      genres: selectedMovie.genres,
+      runtime_minutes: selectedMovie.runtime_minutes,
+      my_rating: ratingInput.value ? parseFloat(ratingInput.value) : null,
+      review: reviewInput.value.trim() || '',
+      date_watched: dateInput.value || new Date().toISOString().slice(0, 10),
+      tags: activeTags
+    };
+    const jsonStr = JSON.stringify(entry, null, 2);
+    jsonOutput.textContent = jsonStr;
+    showOutputStep();
+  });
+
+  // Copy to clipboard
+  copyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(jsonOutput.textContent);
+      copyToast.classList.add('show');
+      setTimeout(() => copyToast.classList.remove('show'), 2000);
+    } catch {
+      // Fallback
+      const range = document.createRange();
+      range.selectNodeContents(jsonOutput);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      document.execCommand('copy');
+      copyToast.classList.add('show');
+      setTimeout(() => copyToast.classList.remove('show'), 2000);
+    }
+  });
+
+  // Add another
+  addAnotherBtn.addEventListener('click', () => { selectedMovie = null; showSearchStep(); });
 })();
 </script>
 </body>
