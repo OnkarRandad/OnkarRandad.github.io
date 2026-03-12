@@ -98,6 +98,7 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .timeline-item:nth-child(even) .timeline-content::before{left:-28px;border-right-color:var(--white)}
 .timeline-icon{grid-column:2;width:60px;height:60px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px var(--shadow);margin:10px auto 0}
 .timeline-icon img{width:34px;height:34px;object-fit:contain;filter:brightness(0) invert(1)}
+.timeline-icon img.no-invert{filter:none}
 .company{font-weight:800;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:6px}
 .company-logo{width:36px;height:36px;object-fit:contain}
 .role{font-weight:800;color:var(--dark)}
@@ -211,14 +212,15 @@ html{scroll-behavior:smooth}
         <img src="images/profile.jpg" alt="Onkar Randad" class="profile-image" loading="eager" />
       </div>
       <div class="hero-text">
-        <span class="kicker">Copart • Ex-Merck • UCLA Anderson MSBA '25 • BITS Pilani</span>
+        <span class="kicker">Copart • Ex-Merck • Ex-ZS • UCLA Anderson MSBA '25 • BITS Pilani</span>
         <h1>Hello, I'm Onkar</h1>
         <p class="subtitle">Strategy Analyst driving <strong>transportation network optimization</strong>, cost analytics, and executive-facing data strategy. I turn complex logistics data into actionable insights that move the business.</p>
         <div class="highlights">
           <span class="badge">Strategy Analyst @ Copart</span>
+          <a href="files/UCLA MSBA Degree.png" target="_blank" rel="noopener" class="badge" style="text-decoration:none;color:var(--text);cursor:pointer">UCLA MSBA '25</a>
+          <span class="badge">Ex-ZS</span>
           <span class="badge">3+ yrs @ ZS (Project Wizard, GTM & Launch Strategy, NBE, Oncology)</span>
           <span class="badge">Agentic AI on Databricks</span>
-          <span class="badge">BigQuery</span>
           <span class="badge">Network Optimization</span>
           <span class="badge">VP, Career Services @ UCLA MSBA</span>
         </div>
@@ -243,7 +245,7 @@ html{scroll-behavior:smooth}
     <h2 class="fade-in">About</h2>
     <div class="about">
       <div class="card fade-in" style="grid-column: 1 / -1;">
-        <p>I transform complex data into strategic business insights. With 3+ years at ZS Associates, a summer at Merck, and an MSBA from UCLA Anderson (Dec 2025), I now work as a Strategy Analyst at Copart — driving logistics analytics, transportation network optimization, and data-driven strategy for one of the world's largest vehicle remarketing companies.</p>
+        <p>I transform complex data into strategic business insights. With 3+ years at ZS Associates, a summer at Merck, and an MSBA from UCLA Anderson (Dec 2025), I now work as a Strategy Analyst at Copart, driving logistics analytics, transportation network optimization, and data-driven strategy for one of the world's largest vehicle remarketing companies.</p>
         <p style="margin-top:12px">Beyond data, I love movies, food, music, books, and philosophy</p>
       </div>
     </div>
@@ -256,6 +258,16 @@ html{scroll-behavior:smooth}
     <div class="container">
       <h2 class="fade-in">Featured Projects</h2>
       <div class="projects-grid">
+        <!-- 0) FIFA World Cup 2026 -->
+        <div class="project-card fade-in">
+          <div class="project-tag">Copart • 2026</div>
+          <h3>FIFA World Cup 2026 — Dallas Match Predictor</h3>
+          <p>Live probability analytics platform that predicts knockout-round matchups for FIFA World Cup 2026 at AT&T Stadium. Ingests real-time odds from Kalshi and Polymarket, converts them into tournament outcome probabilities using a custom engine, and propagates group-finishing probabilities through the knockout bracket.</p>
+          <div class="project-impact"><span class="impact-number">Live forecasting</span> replaced static spreadsheet • Enabled <span class="impact-number">executive planning</span> weeks ahead of match confirmations</div>
+          <div class="stack"><span class="tag">TypeScript</span><span class="tag">Prediction Markets</span><span class="tag">Probability Engine</span><span class="tag">Real-time Analytics</span></div>
+          <div style="margin-top:12px"><a class="btn btn-secondary" href="https://fifa26-dallas-predictor.vercel.app/" target="_blank" rel="noopener" style="font-size:.85rem;padding:8px 16px">Try the Tool</a></div>
+        </div>
+
         <!-- 1) StudyBuddy.ai Capstone -->
         <div class="project-card fade-in">
           <div class="project-tag">UCLA MSBA Capstone • 2025</div>
@@ -594,7 +606,7 @@ html{scroll-behavior:smooth}
                 <li>Details coming soon</li>
               </ul>
             </div>
-            <div class="timeline-icon"><img src="images/logos/copart-logo.png" alt="Copart"></div>
+            <div class="timeline-icon"><img src="images/logos/copart-logo.png" alt="Copart" class="no-invert"></div>
           </div>
 
           <!-- Merck -->
