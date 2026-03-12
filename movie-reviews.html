@@ -191,10 +191,10 @@ textarea.admin-input{min-height:80px;resize:vertical}
 .admin-success h4{color:#059669;margin-bottom:4px}
 
 /* Travis Bickle 8-bit Easter Egg */
-.travis-section{background:var(--dark);padding:50px 0 0;position:relative;overflow:hidden}
-.travis-scene{display:flex;align-items:flex-end;justify-content:center;gap:24px;min-height:240px;position:relative;padding:0 20px}
+.travis-section{background:var(--dark);padding:50px 0 20px;position:relative}
+.travis-scene{display:flex;align-items:flex-start;justify-content:center;gap:24px;min-height:180px;position:relative;padding:30px 20px 0}
 /* Pixel sprite via box-shadow — each "pixel" is 5px */
-.travis-sprite{width:5px;height:5px;position:relative;flex-shrink:0;image-rendering:pixelated;animation:travis-idle 1s steps(2) infinite;margin-bottom:0;
+.travis-sprite{width:5px;height:5px;position:relative;flex-shrink:0;image-rendering:pixelated;animation:travis-idle 1s steps(2) infinite;margin-top:25px;
   box-shadow:
     /* Mohawk */
     30px -5px #3a1f0e,35px -5px #3a1f0e,
@@ -277,7 +277,7 @@ textarea.admin-input{min-height:80px;resize:vertical}
     10px 95px #1a0f05,15px 95px #1a0f05,20px 95px #1a0f05,25px 95px #1a0f05,35px 95px #1a0f05,40px 95px #1a0f05,45px 95px #1a0f05,50px 95px #1a0f05
 }
 /* 8-bit speech bubble */
-.travis-bubble{position:relative;margin-bottom:20px;padding:16px 20px;background:var(--white);color:var(--dark);font-family:'Courier New',monospace;font-size:1rem;font-weight:700;letter-spacing:1px;max-width:300px;border:4px solid var(--dark);image-rendering:pixelated;animation:bubble-bob 2.5s ease-in-out infinite}
+.travis-bubble{position:relative;padding:16px 20px;background:var(--white);color:var(--dark);font-family:'Courier New',monospace;font-size:1rem;font-weight:700;letter-spacing:1px;max-width:300px;border:4px solid var(--dark);image-rendering:pixelated;animation:bubble-bob 2.5s ease-in-out infinite;align-self:flex-start;margin-top:10px}
 .travis-bubble::before{content:"";position:absolute;bottom:-16px;right:40px;width:0;height:0;border:8px solid transparent;border-top:8px solid var(--dark)}
 .travis-bubble::after{content:"";position:absolute;bottom:-10px;right:42px;width:0;height:0;border:6px solid transparent;border-top:6px solid var(--white)}
 /* Pixel corners on bubble */
