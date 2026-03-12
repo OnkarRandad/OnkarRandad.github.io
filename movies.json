@@ -91,45 +91,6 @@
     "tags": []
   },
   {
-    "tmdb_id": 157336,
-    "title": "Interstellar",
-    "year": 2014,
-    "director": "Christopher Nolan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
-    "genres": ["Science Fiction", "Drama", "Adventure"],
-    "runtime_minutes": 169,
-    "my_rating": 9.0,
-    "review": "Nolan's most emotional film. The docking scene, the years-lost-in-minutes on Miller's planet, the tesseract — it's a space epic that's really about a father trying to get home. I cried.",
-    "date_watched": "2025-03-01",
-    "tags": ["rewatched"]
-  },
-  {
-    "tmdb_id": 244786,
-    "title": "Whiplash",
-    "year": 2014,
-    "director": "Damien Chazelle",
-    "poster_url": "https://image.tmdb.org/t/p/w500/7fn624j5lj3xTme2SgiLCeuedmO.jpg",
-    "genres": ["Drama", "Music"],
-    "runtime_minutes": 107,
-    "my_rating": 9.0,
-    "review": "J.K. Simmons is terrifying as Fletcher. The final drum solo is the most exhilarating climax in any film this decade. A brutal, electric exploration of what it costs to be great.",
-    "date_watched": "2024-08-30",
-    "tags": ["all-time-favorite"]
-  },
-  {
-    "tmdb_id": 278,
-    "title": "The Shawshank Redemption",
-    "year": 1994,
-    "director": "Frank Darabont",
-    "poster_url": "https://image.tmdb.org/t/p/w500/9cjIGRQL9JEkyGXGa2KOEGnV4gn.jpg",
-    "genres": ["Drama", "Crime"],
-    "runtime_minutes": 142,
-    "my_rating": 9.0,
-    "review": "Hope as a survival mechanism, told through one of cinema's great friendships. Freeman's narration is like warm whiskey. The rain scene after Andy's escape — pure cinema catharsis.",
-    "date_watched": "2024-07-15",
-    "tags": ["all-time-favorite", "rewatched"]
-  },
-  {
     "tmdb_id": 6977,
     "title": "No Country for Old Men",
     "year": 2007,
@@ -140,19 +101,6 @@
     "my_rating": 9.0,
     "review": "Chigurh is cinema's most terrifying villain — not because of what he does, but because of his philosophy. The Coens strip the Western to its bones and find nihilism underneath. The coin toss scene is flawless.",
     "date_watched": "2024-12-01",
-    "tags": []
-  },
-  {
-    "tmdb_id": 872585,
-    "title": "Oppenheimer",
-    "year": 2023,
-    "director": "Christopher Nolan",
-    "poster_url": "https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
-    "genres": ["Drama", "History"],
-    "runtime_minutes": 180,
-    "my_rating": 8.5,
-    "review": "Nolan makes a three-hour biopic feel like a thriller. Cillian Murphy disappears into the role. The Trinity test sequence is the best thing Nolan has ever directed — sound design that hits you in the chest.",
-    "date_watched": "2025-02-18",
     "tags": []
   },
   {
