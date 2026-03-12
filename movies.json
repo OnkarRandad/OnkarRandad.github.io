@@ -141,5 +141,70 @@
     "review": "Wes Anderson's dollhouse aesthetic reaches its peak here. Ralph Fiennes is hilarious and heartbreaking as Gustave. Beneath the whimsy is a surprisingly melancholic story about the death of a world.",
     "date_watched": "2024-10-25",
     "tags": []
+  },
+  {
+    "tmdb_id": 10494,
+    "title": "Perfect Blue",
+    "year": 1997,
+    "director": "Satoshi Kon",
+    "poster_url": "https://image.tmdb.org/t/p/w500/79vujbMJgEMN5MKvsTUBG0oNaLO.jpg",
+    "genres": ["Animation", "Thriller"],
+    "runtime_minutes": 81,
+    "my_rating": 9.0,
+    "review": "Satoshi Kon dissolves the line between reality and delusion so seamlessly you stop trusting your own eyes. A pop idol's identity fractures into something Hitchcock would envy. 81 minutes of pure paranoia.",
+    "date_watched": "2025-02-20",
+    "tags": ["all-time-favorite"]
+  },
+  {
+    "tmdb_id": 1018,
+    "title": "Mulholland Drive",
+    "year": 2001,
+    "director": "David Lynch",
+    "poster_url": "https://image.tmdb.org/t/p/w500/tVxGt7uffLVhIIcwuldXOMpFBPX.jpg",
+    "genres": ["Thriller", "Drama", "Mystery"],
+    "runtime_minutes": 147,
+    "my_rating": 9.0,
+    "review": "Lynch builds a dream you don't want to wake from, then pulls the rug so hard you question everything you just saw. The Club Silencio scene is cinema at its most hypnotic. No hay banda.",
+    "date_watched": "2025-01-28",
+    "tags": ["all-time-favorite"]
+  },
+  {
+    "tmdb_id": 62,
+    "title": "2001: A Space Odyssey",
+    "year": 1968,
+    "director": "Stanley Kubrick",
+    "poster_url": "https://image.tmdb.org/t/p/w500/ve72VENliJEfj1VBfcMn7sDNJD7.jpg",
+    "genres": ["Science Fiction", "Mystery", "Adventure"],
+    "runtime_minutes": 149,
+    "my_rating": 9.5,
+    "review": "Kubrick made a film that feels like it was sent back from the future. The Stargate sequence, HAL's death, the monolith — it's less a movie and more a cosmic experience. Every viewing reveals something new.",
+    "date_watched": "2024-11-15",
+    "tags": ["all-time-favorite"]
+  },
+  {
+    "tmdb_id": 346,
+    "title": "Seven Samurai",
+    "year": 1954,
+    "director": "Akira Kurosawa",
+    "poster_url": "https://image.tmdb.org/t/p/w500/8OKmBV5BUFzmozIC3pPWKHy17kx.jpg",
+    "genres": ["Action", "Drama"],
+    "runtime_minutes": 207,
+    "my_rating": 9.5,
+    "review": "Three and a half hours and not a wasted frame. Kurosawa invented the ensemble action film here — every samurai is distinct, every battle sequence is a masterclass. The rain-soaked final battle is the greatest action scene ever filmed.",
+    "date_watched": "2024-08-20",
+    "tags": ["all-time-favorite"]
+  },
+  {
+    "tmdb_id": 18148,
+    "title": "Tokyo Story",
+    "year": 1953,
+    "director": "Yasujiro Ozu",
+    "poster_url": "https://image.tmdb.org/t/p/w500/7GwmPgSKxRMnHqbJoLaj2jiqoD5.jpg",
+    "genres": ["Drama"],
+    "runtime_minutes": 136,
+    "my_rating": 9.0,
+    "review": "The quietest devastating film ever made. An elderly couple visits their busy children in Tokyo and slowly realizes they've become an inconvenience. Ozu's camera never moves, but everything shifts underneath. The ending wrecked me.",
+    "date_watched": "2025-03-05",
+    "tags": []
   }
 ]
