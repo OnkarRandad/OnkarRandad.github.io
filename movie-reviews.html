@@ -404,6 +404,7 @@ html{scroll-behavior:smooth}
 <!-- Admin FAB + Export -->
 <button class="admin-fab" id="admin-fab" title="Log a Movie">+</button>
 <button class="admin-export" id="admin-export" title="Download movies.json">Export JSON</button>
+<button class="admin-export" id="bulk-fetch" title="Auto-fetch all missing posters from TMDB" style="right:calc(90px + 140px)">Fetch All Posters</button>
 
 <!-- Admin Panel -->
 <div class="admin-panel" id="admin-panel">
@@ -874,6 +875,48 @@ html{scroll-behavior:smooth}
     baseMovies = baseMovies.filter(m => !deletions.has(m.tmdb_id));
     mergeMovies();
   }
+
+  // Bulk fetch posters
+  const bulkFetchBtn = document.getElementById('bulk-fetch');
+  bulkFetchBtn.addEventListener('click', async () => {
+    if (!tmdbApiKey) { alert('Enter your TMDB API key first (Ctrl+Shift+A > Save key)'); return; }
+    const missing = movies.filter(m => !m.poster_url);
+    if (!missing.length) { showToast('All movies have posters!'); return; }
+    bulkFetchBtn.disabled = true;
+    bulkFetchBtn.textContent = `Fetching 0/${missing.length}...`;
+    let updated = 0;
+    for (const m of missing) {
+      try {
+        const q = encodeURIComponent(m.title);
+        const y = m.year ? `&year=${m.year}` : '';
+        const r = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${encodeURIComponent(tmdbApiKey)}&query=${q}${y}&include_adult=false`);
+        if (!r.ok) continue;
+        const data = await r.json();
+        const match = data.results?.[0];
+        if (match) {
+          const d = await getDetails(match.id);
+          const dir = (d.credits?.crew || []).find(c => c.job === 'Director');
+          m.tmdb_id = d.id;
+          m.poster_url = d.poster_path ? `https://image.tmdb.org/t/p/w500${d.poster_path}` : '';
+          m.director = dir ? dir.name : m.director;
+          m.genres = d.genres ? d.genres.map(g => g.name) : m.genres;
+          m.runtime_minutes = d.runtime || m.runtime_minutes;
+          // Save to localStorage
+          const li = localMovies.findIndex(x => x.tmdb_id === m.tmdb_id || x.title === m.title);
+          if (li >= 0) localMovies[li] = m; else localMovies.push(m);
+          updated++;
+        }
+      } catch(e) { /* skip failures */ }
+      bulkFetchBtn.textContent = `Fetching ${updated}/${missing.length}...`;
+      await new Promise(r => setTimeout(r, 250)); // rate limit
+    }
+    saveLocal();
+    mergeMovies();
+    rebuildPage();
+    bulkFetchBtn.disabled = false;
+    bulkFetchBtn.textContent = 'Fetch All Posters';
+    showToast(`Done! ${updated} posters fetched. Click Export JSON to save.`);
+  });
 
   // Travis Bickle click interaction
   const travisScene = document.getElementById('travis-scene');
