@@ -49,8 +49,8 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 
 /* Hero banner — Casablanca faded backdrop */
 .movie-hero{padding:100px 0 50px;text-align:center;color:var(--white);position:relative;overflow:hidden}
-.movie-hero::before{content:"";position:absolute;inset:0;background:url('https://image.tmdb.org/t/p/w1280/hwbViTz1Aszab8Ihud1bxA67dml.jpg') center/cover no-repeat;opacity:.12;filter:grayscale(40%)}
-.movie-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(38,71,51,.92) 0%,rgba(38,71,51,.85) 50%,rgba(38,71,51,.95) 100%)}
+.movie-hero::before{content:"";position:absolute;inset:0;background:url('files/casablanca.webp') center 20%/cover no-repeat;opacity:.15;filter:grayscale(50%) contrast(1.1)}
+.movie-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,71,51,.88) 0%,rgba(38,71,51,.82) 50%,rgba(38,71,51,.95) 100%)}
 .movie-hero .container{position:relative;z-index:1}
 .movie-hero h1{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:12px}
 .movie-hero p{font-size:1.1rem;color:var(--light);max-width:600px;margin:0 auto 30px}
@@ -190,27 +190,63 @@ textarea.admin-input{min-height:80px;resize:vertical}
 .admin-success{background:rgba(16,185,129,.1);border:2px solid #10b981;border-radius:var(--radius);padding:16px;text-align:center;color:var(--dark)}
 .admin-success h4{color:#059669;margin-bottom:4px}
 
-/* Travis Bickle Easter Egg */
-.travis-section{background:var(--dark);padding:40px 0 0;position:relative;overflow:hidden}
-.travis-scene{display:flex;align-items:flex-end;justify-content:center;gap:0;min-height:200px;position:relative}
-.travis-figure{position:relative;width:80px;flex-shrink:0}
-/* Pixel-art Travis via CSS */
-.travis-body{width:80px;height:160px;position:relative}
-.travis-head{width:32px;height:36px;background:#e8b89d;border-radius:50% 50% 45% 45%;position:absolute;top:0;left:24px}
-.travis-mohawk{width:8px;height:22px;background:#3a2518;border-radius:4px 4px 0 0;position:absolute;top:-8px;left:36px}
-.travis-shades{width:26px;height:8px;background:#1a1a1a;border-radius:2px;position:absolute;top:14px;left:27px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.1)}
-.travis-jacket{width:50px;height:50px;background:#4a6741;border-radius:8px 8px 4px 4px;position:absolute;top:34px;left:15px;border:2px solid #3a5535}
-.travis-jacket::before{content:"";position:absolute;top:4px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:#e8b89d;border-radius:0 0 6px 6px}
-.travis-pants{width:44px;height:40px;background:#2c2c3a;position:absolute;top:82px;left:18px;border-radius:0 0 4px 4px}
-.travis-pants::before{content:"";position:absolute;bottom:0;left:0;width:18px;height:14px;background:#1a1a2a;border-radius:0 0 4px 4px}
-.travis-pants::after{content:"";position:absolute;bottom:0;right:0;width:18px;height:14px;background:#1a1a2a;border-radius:0 0 4px 4px}
-.travis-boots{display:flex;gap:8px;position:absolute;top:120px;left:18px}
-.travis-boot{width:18px;height:12px;background:#2a1a0a;border-radius:0 0 4px 4px}
-/* Speech bubble */
-.travis-bubble{background:var(--white);color:var(--dark);padding:14px 20px;border-radius:var(--radius);font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic;font-weight:600;position:relative;margin-bottom:40px;box-shadow:0 4px 20px var(--shadow);max-width:280px;animation:bubble-float 3s ease-in-out infinite}
-.travis-bubble::after{content:"";position:absolute;bottom:-10px;left:30px;width:0;height:0;border-left:12px solid transparent;border-right:12px solid transparent;border-top:12px solid var(--white)}
-@keyframes bubble-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.travis-credit{color:var(--light);font-size:.72rem;margin-top:8px;opacity:.5;text-align:center;padding-bottom:12px}
+/* Travis Bickle 8-bit Easter Egg */
+.travis-section{background:var(--dark);padding:50px 0 0;position:relative;overflow:hidden}
+.travis-scene{display:flex;align-items:flex-end;justify-content:center;gap:24px;min-height:240px;position:relative;padding:0 20px}
+/* Pixel sprite via box-shadow — each "pixel" is 5px */
+.travis-sprite{width:5px;height:5px;position:relative;flex-shrink:0;image-rendering:pixelated;animation:travis-idle 1s steps(2) infinite;margin-bottom:0;
+  box-shadow:
+    /* Mohawk */
+    30px -5px #3a1f0e,35px -5px #3a1f0e,
+    30px -10px #3a1f0e,35px -10px #3a1f0e,
+    30px -15px #3a1f0e,35px -15px #3a1f0e,
+    30px -20px #3a1f0e,
+    /* Head */
+    20px 0 #e8b89d,25px 0 #e8b89d,30px 0 #e8b89d,35px 0 #e8b89d,40px 0 #e8b89d,
+    15px 5px #e8b89d,20px 5px #e8b89d,25px 5px #e8b89d,30px 5px #e8b89d,35px 5px #e8b89d,40px 5px #e8b89d,45px 5px #e8b89d,
+    15px 10px #e8b89d,20px 10px #e8b89d,25px 10px #e8b89d,30px 10px #e8b89d,35px 10px #e8b89d,40px 10px #e8b89d,45px 10px #e8b89d,
+    /* Sunglasses */
+    10px 15px #e8b89d,15px 15px #111,20px 15px #111,25px 15px #111,30px 15px #222,35px 15px #111,40px 15px #111,45px 15px #111,50px 15px #e8b89d,
+    15px 20px #e8b89d,20px 20px #e8b89d,25px 20px #e8b89d,30px 20px #e8b89d,35px 20px #e8b89d,40px 20px #e8b89d,45px 20px #e8b89d,
+    /* Mouth/chin */
+    20px 25px #e8b89d,25px 25px #e8b89d,30px 25px #d4967a,35px 25px #d4967a,40px 25px #e8b89d,
+    25px 30px #e8b89d,30px 30px #e8b89d,35px 30px #e8b89d,
+    /* Neck */
+    25px 35px #e8b89d,30px 35px #e8b89d,35px 35px #e8b89d,
+    /* Army jacket */
+    10px 40px #4a6741,15px 40px #4a6741,20px 40px #4a6741,25px 40px #4a6741,30px 40px #4a6741,35px 40px #4a6741,40px 40px #4a6741,45px 40px #4a6741,50px 40px #4a6741,
+    5px 45px #4a6741,10px 45px #4a6741,15px 45px #4a6741,20px 45px #3a5535,25px 45px #4a6741,30px 45px #4a6741,35px 45px #4a6741,40px 45px #3a5535,45px 45px #4a6741,50px 45px #4a6741,55px 45px #4a6741,
+    5px 50px #4a6741,10px 50px #4a6741,15px 50px #4a6741,20px 50px #4a6741,25px 50px #3a5535,30px 50px #4a6741,35px 50px #3a5535,40px 50px #4a6741,45px 50px #4a6741,50px 50px #4a6741,55px 50px #4a6741,
+    5px 55px #3a5535,10px 55px #4a6741,15px 55px #4a6741,20px 55px #4a6741,25px 55px #4a6741,30px 55px #4a6741,35px 55px #4a6741,40px 55px #4a6741,45px 55px #4a6741,50px 55px #4a6741,55px 55px #3a5535,
+    5px 60px #4a6741,10px 60px #4a6741,15px 60px #4a6741,20px 60px #4a6741,25px 60px #4a6741,30px 60px #3a5535,35px 60px #4a6741,40px 60px #4a6741,45px 60px #4a6741,50px 60px #4a6741,55px 60px #4a6741,
+    /* Arms */
+    0px 45px #e8b89d,0px 50px #e8b89d,0px 55px #e8b89d,
+    60px 45px #e8b89d,60px 50px #e8b89d,60px 55px #e8b89d,
+    /* Belt */
+    15px 65px #2a1a0a,20px 65px #2a1a0a,25px 65px #2a1a0a,30px 65px #a08040,35px 65px #2a1a0a,40px 65px #2a1a0a,45px 65px #2a1a0a,
+    /* Pants */
+    15px 70px #2c2c3a,20px 70px #2c2c3a,25px 70px #2c2c3a,30px 70px #24243a,35px 70px #2c2c3a,40px 70px #2c2c3a,45px 70px #2c2c3a,
+    15px 75px #2c2c3a,20px 75px #2c2c3a,25px 75px #2c2c3a,30px 75px #24243a,35px 75px #2c2c3a,40px 75px #2c2c3a,45px 75px #2c2c3a,
+    15px 80px #24243a,20px 80px #2c2c3a,25px 80px #2c2c3a,30px 80px #24243a,35px 80px #2c2c3a,40px 80px #2c2c3a,45px 80px #24243a,
+    15px 85px #24243a,20px 85px #2c2c3a,25px 85px #24243a,35px 85px #24243a,40px 85px #2c2c3a,45px 85px #24243a,
+    /* Boots */
+    10px 90px #1a0f05,15px 90px #2a1a0a,20px 90px #2a1a0a,25px 90px #2a1a0a,35px 90px #2a1a0a,40px 90px #2a1a0a,45px 90px #2a1a0a,50px 90px #1a0f05,
+    10px 95px #1a0f05,15px 95px #1a0f05,20px 95px #1a0f05,25px 95px #1a0f05,35px 95px #1a0f05,40px 95px #1a0f05,45px 95px #1a0f05,50px 95px #1a0f05
+}
+@keyframes travis-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+/* 8-bit speech bubble */
+.travis-bubble{position:relative;margin-bottom:20px;padding:16px 20px;background:var(--white);color:var(--dark);font-family:'Courier New',monospace;font-size:1rem;font-weight:700;letter-spacing:1px;max-width:300px;border:4px solid var(--dark);image-rendering:pixelated;animation:bubble-bob 2.5s ease-in-out infinite}
+.travis-bubble::before{content:"";position:absolute;bottom:-16px;right:40px;width:0;height:0;border:8px solid transparent;border-top:8px solid var(--dark)}
+.travis-bubble::after{content:"";position:absolute;bottom:-10px;right:42px;width:0;height:0;border:6px solid transparent;border-top:6px solid var(--white)}
+/* Pixel corners on bubble */
+.travis-bubble-wrap{position:relative}
+.travis-bubble .pixel-tl,.travis-bubble .pixel-tr,.travis-bubble .pixel-bl,.travis-bubble .pixel-br{position:absolute;width:4px;height:4px;background:var(--dark)}
+.travis-bubble .pixel-tl{top:-4px;left:-4px}
+.travis-bubble .pixel-tr{top:-4px;right:-4px}
+.travis-bubble .pixel-bl{bottom:-4px;left:-4px}
+.travis-bubble .pixel-br{bottom:-4px;right:-4px}
+@keyframes bubble-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.travis-credit{color:var(--light);font-size:.72rem;margin-top:12px;opacity:.4;text-align:center;padding-bottom:16px;font-family:'Courier New',monospace;letter-spacing:1px}
 
 /* Footer */
 footer{padding:28px 0;color:var(--light);text-align:center;background:rgba(0,0,0,.2)}
@@ -254,8 +290,9 @@ footer a:hover{text-decoration:underline}
   .admin-body{padding:16px}
   .admin-fab{bottom:16px;right:16px;width:48px;height:48px;font-size:1.3rem}
   .admin-export{bottom:16px;right:72px;height:40px;font-size:.8rem;padding:0 14px}
-  .travis-bubble{font-size:.95rem;padding:10px 16px;max-width:200px}
-  .travis-figure{transform:scale(.8);transform-origin:bottom center}
+  .travis-bubble{font-size:.85rem;padding:10px 14px;max-width:200px}
+  .travis-sprite{transform:scale(.7);transform-origin:bottom center}
+  .travis-scene{gap:12px}
 }
 html{scroll-behavior:smooth}
 </style>
@@ -392,22 +429,16 @@ html{scroll-behavior:smooth}
 <!-- Toast -->
 <div class="copy-toast" id="copy-toast">Saved!</div>
 
-<!-- Travis Bickle Easter Egg -->
+<!-- Travis Bickle 8-bit Easter Egg -->
 <section class="travis-section">
   <div class="travis-scene fade-in">
-    <div class="travis-bubble">You talkin' to me?</div>
-    <div class="travis-figure">
-      <div class="travis-body">
-        <div class="travis-mohawk"></div>
-        <div class="travis-head"></div>
-        <div class="travis-shades"></div>
-        <div class="travis-jacket"></div>
-        <div class="travis-pants"></div>
-        <div class="travis-boots"><div class="travis-boot"></div><div class="travis-boot"></div></div>
-      </div>
+    <div class="travis-bubble">
+      <span class="pixel-tl"></span><span class="pixel-tr"></span><span class="pixel-bl"></span><span class="pixel-br"></span>
+      You talkin' to me?
     </div>
+    <div class="travis-sprite"></div>
   </div>
-  <p class="travis-credit">Taxi Driver (1976) &bull; Martin Scorsese</p>
+  <p class="travis-credit">TAXI DRIVER (1976) // SCORSESE</p>
 </section>
 
 <footer>
