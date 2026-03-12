@@ -52,7 +52,7 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .movie-hero::before{content:"";position:absolute;inset:0;background:url('files/casablanca.webp') center 60%/cover no-repeat;opacity:.5;filter:grayscale(20%)}
 .movie-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,71,51,.45) 0%,rgba(38,71,51,.3) 50%,rgba(38,71,51,.65) 100%)}
 .movie-hero .container{position:relative;z-index:1}
-.movie-hero h1{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:12px}
+.movie-hero h1{font-family:'Playfair Display',serif;font-size:4rem;margin-bottom:12px;letter-spacing:6px;text-transform:uppercase}
 .movie-hero p{font-size:1.1rem;color:var(--light);max-width:600px;margin:0 auto 30px}
 .movie-hero a{color:var(--accent);text-decoration:none;font-weight:600}
 .movie-hero a:hover{text-decoration:underline}
@@ -65,7 +65,7 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 
 /* Controls */
 .controls-section{background:var(--white);padding:30px 0;border-bottom:1px solid rgba(38,71,51,.1)}
-.controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center}
+.controls{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
 .search-box{padding:10px 18px;border:2px solid var(--light);border-radius:999px;font-family:'Inter',sans-serif;font-size:.92rem;width:280px;outline:none;background:var(--white);color:var(--text);transition:var(--transition)}
 .search-box:focus{border-color:var(--accent)}
 .search-box::placeholder{color:var(--text-light)}
@@ -315,7 +315,7 @@ footer a:hover{text-decoration:underline}
   .search-box{width:100%;max-width:400px}
 }
 @media (max-width:480px){
-  .movie-hero h1{font-size:1.8rem}
+  .movie-hero h1{font-size:2.2rem;letter-spacing:4px}
   .movie-hero p{font-size:.95rem}
   .stats-banner{gap:16px}
   .stat-number{font-size:1.5rem}
