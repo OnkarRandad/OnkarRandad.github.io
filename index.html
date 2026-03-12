@@ -46,6 +46,12 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .nav-menu{display:flex;gap:4px;background:var(--white);border-radius:999px;box-shadow:0 4px 20px var(--shadow);overflow:hidden}
 .nav-item{padding:10px 18px;color:var(--text);text-decoration:none;font-weight:600;border-radius:999px;font-size:.9rem}
 .nav-item:hover,.nav-item.active{background:var(--accent);color:var(--white)}
+/* Hamburger */
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:6px;z-index:1100}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;border-radius:2px;transition:var(--transition)}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 /* Hero */
 .hero{min-height:92vh;display:flex;align-items:center;color:var(--white);padding:90px 0 40px;background:linear-gradient(135deg,var(--dark) 0%,rgba(38,71,51,.9) 55%,var(--dark) 100%)}
 .hero-content{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:center;width:100%}
@@ -129,6 +135,12 @@ footer{padding:28px 0;color:var(--light);text-align:center;background:rgba(0,0,0
 /* Responsive - Improved mobile layout */
 @media (max-width:968px){
   .container{padding:0 15px}
+  .hamburger{display:flex;flex-direction:column;justify-content:center}
+  .nav-menu{position:fixed;top:0;right:-100%;width:280px;height:100vh;flex-direction:column;border-radius:0;padding:80px 24px 24px;gap:4px;z-index:1050;transition:right .3s ease;overflow-y:auto;overflow-x:hidden;box-shadow:none}
+  .nav-menu.open{right:0;box-shadow:-4px 0 30px rgba(0,0,0,.3)}
+  .nav-item{padding:14px 18px;font-size:1rem;border-radius:var(--radius);text-align:left}
+  .nav-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1040}
+  .nav-overlay.open{display:block}
   .hero{padding:60px 0 30px;min-height:auto}
   .hero-content{grid-template-columns:1fr;gap:30px;text-align:center}
   .profile-image{width:200px;height:200px;margin:0 auto}
@@ -147,21 +159,33 @@ footer{padding:28px 0;color:var(--light);text-align:center;background:rgba(0,0,0
   .timeline-content{padding:18px}
   .projects-grid{grid-template-columns:1fr;gap:20px}
   .contact-methods{flex-direction:column;gap:20px}
-  .nav-menu{gap:2px;padding:4px}
-  .nav-item{padding:8px 14px;font-size:.85rem}
+  .certs-grid{grid-template-columns:1fr}
 }
 @media (max-width:480px){
-  .hero-text h1{font-size:2rem}
-  .kicker{font-size:.75rem}
-  .subtitle{font-size:1rem}
+  .hero-text h1{font-size:1.8rem}
+  .kicker{font-size:.72rem;padding:5px 8px}
+  .subtitle{font-size:.95rem}
   .highlights{justify-content:center}
-  .badge{font-size:.75rem;padding:4px 8px}
-  .btn{padding:10px 16px;font-size:.9rem}
+  .badge{font-size:.72rem;padding:4px 8px}
+  .btn{padding:10px 16px;font-size:.88rem}
   .section{padding:40px 0}
-  .section h2{font-size:1.8rem}
-  .timeline-content{padding:15px}
+  .section h2{font-size:1.6rem}
+  .timeline::before{left:28px}
+  .timeline-item{grid-template-columns:56px 1fr}
+  .timeline-icon{width:40px;height:40px}
+  .timeline-icon img{width:22px;height:22px}
+  .timeline-content{padding:14px}
+  .company{font-size:.9rem;flex-wrap:wrap}
+  .company-logo{width:28px;height:28px}
+  .role{font-size:.9rem}
+  .duration{font-size:.8rem}
+  .achievements li{font-size:.88rem}
   .cert-card{padding:15px}
   .cert-card img{height:150px}
+  .profile-image{width:160px;height:160px;border-width:5px}
+  .contact-info{font-size:.82rem;gap:10px}
+  .cta-buttons{gap:8px}
+  .contact-method .icon{width:40px;height:40px;font-size:1rem}
 }
 html{scroll-behavior:smooth}
 .fade-in{opacity:0;transform:translateY(30px);transition:all .6s ease}
@@ -192,7 +216,8 @@ html{scroll-behavior:smooth}
 <nav class="nav">
   <div class="container nav-content">
     <a href="#home" class="nav-logo">OR</a>
-    <div class="nav-menu">
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-menu" id="nav-menu">
       <a href="#home" class="nav-item active">Home</a>
       <a href="#about" class="nav-item">About</a>
       <a href="#projects" class="nav-item">Projects</a>
@@ -204,6 +229,8 @@ html{scroll-behavior:smooth}
     </div>
   </div>
 </nav>
+
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- Hero -->
 <section id="home" class="hero">
@@ -747,6 +774,14 @@ html{scroll-behavior:smooth}
 </footer>
 
 <script>
+// Hamburger menu
+const hamburger=document.getElementById('hamburger');
+const navMenu=document.getElementById('nav-menu');
+const navOverlay=document.getElementById('nav-overlay');
+function toggleNav(){hamburger.classList.toggle('open');navMenu.classList.toggle('open');navOverlay.classList.toggle('open');document.body.style.overflow=navMenu.classList.contains('open')?'hidden':''}
+hamburger.addEventListener('click',toggleNav);
+navOverlay.addEventListener('click',toggleNav);
+document.querySelectorAll('.nav-item').forEach(item=>item.addEventListener('click',()=>{if(navMenu.classList.contains('open'))toggleNav()}));
 // Active menu
 const sections=[...document.querySelectorAll('.section, .hero')];
 const navItems=[...document.querySelectorAll('.nav-item')];
