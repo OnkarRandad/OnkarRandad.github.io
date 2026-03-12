@@ -85,6 +85,7 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .project-tag{display:inline-block;background:var(--accent);color:#fff;padding:4px 10px;border-radius:999px;font-size:.8rem;font-weight:700;margin-bottom:10px}
 .project-impact{background:rgba(38,71,51,.08);border-left:4px solid var(--dark);padding:12px;margin:12px 0;border-radius:0 var(--radius) var(--radius) 0}
 .impact-number{font-weight:800}
+.project-card .stack{justify-content:flex-start}
 /* Timeline */
 .resume-content{max-width:1000px;margin:0 auto}
 .timeline{position:relative;padding:20px 0}
@@ -96,7 +97,7 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .timeline-content::before{content:"";position:absolute;top:24px;width:0;height:0;border:14px solid transparent}
 .timeline-item:nth-child(odd) .timeline-content::before{right:-28px;border-left-color:var(--white)}
 .timeline-item:nth-child(even) .timeline-content::before{left:-28px;border-right-color:var(--white)}
-.timeline-icon{grid-column:2;width:60px;height:60px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px var(--shadow);margin:10px auto 0}
+.timeline-icon{grid-column:2;width:60px;height:60px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px var(--shadow);margin:0 auto;align-self:start;margin-top:10px}
 .timeline-icon img{width:34px;height:34px;object-fit:contain;filter:brightness(0) invert(1)}
 .timeline-icon img.no-invert{filter:none}
 .company{font-weight:800;color:var(--accent);display:flex;align-items:center;gap:10px;margin-bottom:6px}
@@ -344,7 +345,29 @@ html{scroll-behavior:smooth}
     <div class="container">
       <h2 class="fade-in">Certificates</h2>
       <div class="certs-grid">
-        
+
+        <div class="cert-card fade-in">
+          <img src="files/Databricks Academy Accreditation - Databricks Fundamentals.png" alt="Databricks Fundamentals" />
+          <div class="cert-meta">
+            <h3>Academy Accreditation — Databricks Fundamentals</h3>
+            <p>Databricks</p>
+            <div class="cert-actions">
+              <a class="btn btn-secondary cert-verify" href="https://credentials.databricks.com/85bea117-cd71-41dd-8590-a54ec188f82b#acc.6yWJkOXp" target="_blank" rel="noopener">View Certificate</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card fade-in">
+          <img src="files/Databricks Academy Accreditation - Generative AI Fundamentals.png" alt="Generative AI Fundamentals" />
+          <div class="cert-meta">
+            <h3>Academy Accreditation — Generative AI Fundamentals</h3>
+            <p>Databricks</p>
+            <div class="cert-actions">
+              <a class="btn btn-secondary cert-verify" href="https://credentials.databricks.com/947723ee-89b8-4721-b1da-91ef46481f80#acc.0zJP8B9D" target="_blank" rel="noopener">View Certificate</a>
+            </div>
+          </div>
+        </div>
+
         <div class="cert-card fade-in">
           <img src="files/excel_skills_certificate.jpg" alt="Excel Skills for Business: Essentials" />
           <div class="cert-meta">
@@ -620,7 +643,7 @@ html{scroll-behavior:smooth}
                 <li>LLM post-processing that narrates raw SQL output for C-suite consumption</li>
               </ul>
             </div>
-            <div class="timeline-icon"><img src="images/logos/merck-logo.png" alt="Merck"></div>
+            <div class="timeline-icon"><img src="images/logos/merck-logo.png" alt="Merck" class="no-invert"></div>
           </div>
 
           <!-- UCLA -->
@@ -711,7 +734,7 @@ html{scroll-behavior:smooth}
         <a href="files/Onkar_Randad_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
       </div>
       <div style="margin-top:28px;color:var(--text-light)">
-        <p><strong>Location:</strong> Dallas, TX area</p>
+        <p><strong>Location:</strong> Dallas, TX</p>
       </div>
     </div>
   </div>
