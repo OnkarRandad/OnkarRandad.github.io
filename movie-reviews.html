@@ -48,8 +48,8 @@ body{font-family:'Inter',sans-serif;line-height:1.6;color:var(--text);background
 .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* Hero banner — Casablanca faded backdrop */
-.movie-hero{padding:100px 0 50px;text-align:center;color:var(--white);position:relative;overflow:hidden}
-.movie-hero::before{content:"";position:absolute;inset:0;background:url('files/casablanca.webp') center 20%/cover no-repeat;opacity:.5;filter:grayscale(20%)}
+.movie-hero{padding:120px 0 60px;text-align:center;color:var(--white);position:relative;overflow:hidden;min-height:340px}
+.movie-hero::before{content:"";position:absolute;inset:0;background:url('files/casablanca.webp') center top/cover no-repeat;opacity:.5;filter:grayscale(20%)}
 .movie-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(38,71,51,.45) 0%,rgba(38,71,51,.3) 50%,rgba(38,71,51,.65) 100%)}
 .movie-hero .container{position:relative;z-index:1}
 .movie-hero h1{font-family:'Playfair Display',serif;font-size:3rem;margin-bottom:12px}
